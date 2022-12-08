@@ -150,10 +150,9 @@ func convertToK(limit string, pvcStorage int64) (string, error) {
 		value = 100
 	}
 
+	pvcStorage /= 1000
 	value *= float64(pvcStorage)
 	value /= 100
-	value += float64(pvcStorage)
-	value /= 1000
 
 	value = math.Ceil(value)
 	valueString = strconv.FormatFloat(value, 'f', -1, 64)
